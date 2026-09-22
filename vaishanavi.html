@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to My Life, Sister Vaishanavi ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:Georgia,serif;
+  background:#080814;
+  color:white;
+}
+
+.scene{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+}
+
+.scene.active{
+  display:flex;
+}
+
+.content{
+  width:min(680px,94vw);
+  z-index:5;
+}
+
+.small{
+  font-size:14px;
+  letter-spacing:3px;
+  opacity:.75;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(38px,9vw,72px);
+  margin-bottom:20px;
+  text-shadow:0 0 25px #ff8fd8;
+}
+
+h2{
+  font-size:clamp(27px,7vw,48px);
+  margin-bottom:20px;
+}
+
+p{
+  font-size:19px;
+  line-height:1.7;
+}
+
+button{
+  border:0;
+  padding:15px 28px;
+  border-radius:50px;
+  margin-top:28px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#791b61;
+  box-shadow:0 0 25px #ff9ddd;
+}
+
+#scene1{
+  background:radial-gradient(circle,#24144d,#080814 65%);
+}
+
+#scene2{
+  background:radial-gradient(circle,#7d236e,#241139 55%,#080814);
+}
+
+#scene3{
+  background:linear-gradient(135deg,#180c2b,#5b175c,#160b2c);
+}
+
+#scene4{
+  background:radial-gradient(circle,#39206b,#090914);
+}
+
+#scene5{
+  background:#000;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:45px 45px;
+  opacity:.35;
+  animation:stars 8s linear infinite;
+}
+
+@keyframes stars{
+  from{transform:translateY(0)}
+  to{transform:translateY(-45px)}
+}
+
+.icon{
+  font-size:80px;
+  margin-bottom:15px;
+  animation:float 1.8s infinite alternate;
+}
+
+@keyframes float{
+  to{transform:translateY(-14px)}
+}
+
+.card{
+  background:#ffffff12;
+  border:1px solid #ffffff25;
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 35px #0008;
+}
+
+.gift{
+  font-size:110px;
+  animation:gift 1.5s infinite alternate;
+}
+
+@keyframes gift{
+  to{transform:scale(1.12) rotate(2deg)}
+}
+
+.videoBox{
+  width:min(850px,95vw);
+}
+
+video{
+  width:100%;
+  max-height:72vh;
+  border-radius:22px;
+  box-shadow:0 0 40px #ff72cf;
+  background:#000;
+}
+
+.final{
+  margin-top:15px;
+  font-size:20px;
+  color:#ffd2f0;
+}
+
+.particle{
+  position:absolute;
+  pointer-events:none;
+  animation:rise 5s linear forwards;
+  font-size:20px;
+}
+
+@keyframes rise{
+  from{
+    transform:translateY(110vh) rotate(0);
+    opacity:1;
+  }
+  to{
+    transform:translateY(-10vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:500px){
+  p{font-size:17px}
+  .card{padding:22px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SCENE 1 -->
+
+<section class="scene active" id="scene1">
+
+<div class="stars"></div>
+
+<div class="content">
+
+<div class="small">A LITTLE SURPRISE FOR YOU</div>
+
+<h1>Hey Vaishanavi ✨</h1>
+
+<p>
+Something special is waiting for you...<br>
+And this one comes from your <b>new brother</b>. ❤️
+</p>
+
+<button onclick="nextScene()">
+💖 Open Surprise
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 2 -->
+
+<section class="scene" id="scene2">
+
+<div class="content">
+
+<div class="icon">👋❤️</div>
+
+<div class="small">OFFICIALLY FAMILY</div>
+
+<h1>Welcome, Sister!</h1>
+
+<h2>Vaishanavi 🫂</h2>
+
+<p>
+We may have become siblings only recently,
+but I'm really happy that you are now a part
+of my family. ❤️
+<br><br>
+
+And yes... you officially have a new brother
+to annoy you forever. 😂
+</p>
+
+<button onclick="nextScene()">
+✨ Continue
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 3 -->
+
+<section class="scene" id="scene3">
+
+<div class="content">
+
+<div class="card">
+
+<div class="small">A MESSAGE FROM YOUR NEW BROTHER 💌</div>
+
+<h2>Dear Vaishanavi ❤️</h2>
+
+<p>
+We may not have years and years of memories
+together yet...
+<br><br>
+
+But I'm genuinely happy that life gave me
+a new sister like you. 🥹
+<br><br>
+
+I hope this new bond brings us
+lots of laughter, crazy memories,
+random arguments, and countless good moments. 😄
+<br><br>
+
+I don't know what the future holds,
+but I hope we always stay close,
+support each other, and keep this bond special. ❤️
+<br><br>
+
+And don't worry...
+I'll try to be a good brother. 😜
+<b>TRY.</b> 😂
+</p>
+
+</div>
+
+<button onclick="nextScene()">
+🎁 One More Thing
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 4 -->
+
+<section class="scene" id="scene4">
+
+<div class="content">
+
+<div class="gift">🎁</div>
+
+<h2>One Last Surprise...</h2>
+
+<p>
+Because a new sister deserves
+a special birthday memory. ❤️
+<br><br>
+
+Ready, Vaishanavi?
+</p>
+
+<button onclick="nextScene()">
+🎬 Open The Surprise
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 5 -->
+
+<section class="scene" id="scene5">
+
+<div class="videoBox">
+
+<div class="small">
+🎬 A SPECIAL MESSAGE FOR VAISHANAVI
+</div>
+
+<video id="birthdayVideo" controls playsinline>
+<source src="YOUR_VIDEO.mp4" type="video/mp4">
+</video>
+
+<div class="final">
+Happy Birthday, Vaishanavi! 🎂❤️<br>
+I'm really happy to call you my sister. 🫂✨
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+let current = 1;
+
+function nextScene(){
+
+  document
+  .getElementById("scene"+current)
+  .classList.remove("active");
+
+  current++;
+
+  document
+  .getElementById("scene"+current)
+  .classList.add("active");
+
+  createParticles();
+
+  if(current === 5){
+
+    document
+    .getElementById("birthdayVideo")
+    .play()
+    .catch(()=>{});
+
+  }
+}
+
+function createParticles(){
+
+  const symbols=[
+    "❤️","💖","✨","🌸","⭐","🫂","🎉"
+  ];
+
+  for(let i=0;i<20;i++){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.textContent=
+      symbols[Math.floor(Math.random()*symbols.length)];
+
+    p.style.left=
+      Math.random()*100+"vw";
+
+    p.style.animationDelay=
+      Math.random()*1.5+"s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+      p.remove();
+    },5500);
+  }
+}
+
+</script>
+
+</body>
+</html>

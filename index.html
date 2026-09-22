@@ -1,282 +1,523 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Mahek ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to My Life, Sister Vaishanavi ❤️</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
+*{
+  box-sizing:border-box;
   margin:0;
-  min-height:100vh;
-  background:radial-gradient(circle at top,#26152f,#08060d 70%);
-  color:white;
-  font-family:Arial,sans-serif;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
   overflow:hidden;
+  font-family:Georgia,serif;
+  background:#080814;
+  color:white;
 }
 
-.page{
-  min-height:100vh;
-  padding:45px 22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.hidden{display:none}
-
-.stars{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-}
-
-.star{
+.scene{
   position:absolute;
-  width:2px;
-  height:2px;
-  background:white;
-  border-radius:50%;
-  animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-  from{opacity:.2}
-  to{opacity:1}
-}
-
-.orb{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  display:flex;
+  inset:0;
+  display:none;
   align-items:center;
   justify-content:center;
-  font-size:42px;
-  background:#ffffff12;
-  box-shadow:0 0 45px #ff70b877;
-  animation:float 3s ease-in-out infinite;
+  text-align:center;
+  padding:25px;
 }
 
-@keyframes float{
-  50%{transform:translateY(-9px)}
+.scene.active{
+  display:flex;
+}
+
+.content{
+  width:min(680px,94vw);
+  z-index:5;
 }
 
 .small{
-  color:#d9b5c9;
+  font-size:14px;
   letter-spacing:3px;
-  font-size:12px;
+  opacity:.75;
+  margin-bottom:18px;
 }
 
 h1{
-  font-family:Georgia,serif;
-  font-weight:normal;
-  letter-spacing:2px;
+  font-size:clamp(38px,9vw,72px);
+  margin-bottom:20px;
+  text-shadow:0 0 25px #ff8fd8;
+}
+
+h2{
+  font-size:clamp(27px,7vw,48px);
+  margin-bottom:20px;
+}
+
+p{
+  font-size:19px;
+  line-height:1.7;
 }
 
 button{
-  margin-top:25px;
-  padding:14px 25px;
-  border:none;
-  border-radius:30px;
-  color:white;
-  background:linear-gradient(135deg,#ff4f9a,#9c4dff);
-  box-shadow:0 0 25px #ff4f9a66;
-  font-size:15px;
+  border:0;
+  padding:15px 28px;
+  border-radius:50px;
+  margin-top:28px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#791b61;
+  box-shadow:0 0 25px #ff9ddd;
 }
 
-.choice{
-  width:100%;
-  max-width:300px;
-  margin:8px;
-  padding:15px;
-  border:1px solid #ffffff22;
-  border-radius:18px;
-  background:#ffffff09;
-  color:white;
+#scene1{
+  background:radial-gradient(circle,#24144d,#080814 65%);
 }
 
-.finalBox{
-  max-width:390px;
-  padding:28px 20px;
-  border-radius:30px;
-  background:#ffffff0b;
-  border:1px solid #ffffff22;
-  box-shadow:0 0 45px #ff5ca855;
-  animation:glow 2s ease-in-out infinite alternate;
+#scene2{
+  background:radial-gradient(circle,#7d236e,#241139 55%,#080814);
 }
 
-@keyframes glow{
-  from{box-shadow:0 0 25px #ff5ca833}
-  to{box-shadow:0 0 55px #ff5ca888}
+#scene3{
+  background:linear-gradient(135deg,#180c2b,#5b175c,#160b2c);
 }
 
-.finalSticker{
-  font-size:48px;
+#scene4{
+  background:radial-gradient(circle,#39206b,#090914);
 }
 
-.mahek{
-  font-family:cursive;
-  font-size:40px;
-  font-style:italic;
-  color:#ffd4e8;
-  text-shadow:0 0 12px #ff8fc5,0 0 25px #ff4f9a;
+#scene5{
+  background:
+  radial-gradient(circle at 50% 30%,#54245f,#150d2c 50%,#080814);
 }
 
-.wish{
-  margin-top:20px;
-  padding:20px;
-  border-radius:24px;
-  background:#ff8fc50b;
-  border:1px solid #ffb6d633;
-  font-family:cursive;
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:45px 45px;
+  opacity:.35;
+  animation:stars 8s linear infinite;
+}
+
+@keyframes stars{
+  from{transform:translateY(0)}
+  to{transform:translateY(-45px)}
+}
+
+.icon{
+  font-size:80px;
+  margin-bottom:15px;
+  animation:float 1.8s infinite alternate;
+}
+
+@keyframes float{
+  to{transform:translateY(-14px)}
+}
+
+.card{
+  background:#ffffff12;
+  border:1px solid #ffffff25;
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 35px #0008;
+}
+
+.gift{
+  font-size:110px;
+  animation:gift 1.5s infinite alternate;
+}
+
+@keyframes gift{
+  to{transform:scale(1.12) rotate(2deg)}
+}
+
+
+/* UNIQUE PHOTO GALLERY */
+
+.memory-title{
+  margin-bottom:5px;
+  text-shadow:0 0 25px #ff72cf;
+}
+
+.memory-subtitle{
   font-size:14px;
-  line-height:1.8;
-  text-align:left;
+  letter-spacing:2px;
+  opacity:.7;
+  margin-bottom:25px;
 }
 
-.wishTitle{
-  text-align:center;
-  color:#f4b8d5;
-  margin-bottom:12px;
-  letter-spacing:1px;
+.photoGallery{
+  position:relative;
+  width:min(520px,90vw);
+  height:330px;
+  margin:0 auto;
 }
 
-.sticker{
-  text-align:center;
+.photo{
+  position:absolute;
+  padding:8px 8px 35px;
+  background:#fff;
+  border-radius:5px;
+  box-shadow:
+    0 15px 35px #0009,
+    0 0 25px #ff72cf55;
+  transition:.5s ease;
+}
+
+.photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:3px;
+}
+
+.photo1{
+  width:190px;
+  height:235px;
+  left:0;
+  top:45px;
+  transform:rotate(-10deg);
+  z-index:1;
+}
+
+.photo2{
+  width:215px;
+  height:275px;
+  left:50%;
+  top:0;
+  transform:translateX(-50%) rotate(2deg);
+  z-index:3;
+}
+
+.photo3{
+  width:190px;
+  height:235px;
+  right:0;
+  top:45px;
+  transform:rotate(10deg);
+  z-index:2;
+}
+
+.photo:hover{
+  transform:translateY(-15px) rotate(0deg) scale(1.05);
+  z-index:10;
+}
+
+.photo2:hover{
+  transform:translateX(-50%) translateY(-15px) rotate(0deg) scale(1.05);
+}
+
+.memoryText{
   margin-top:15px;
-  font-size:18px;
+  font-size:17px;
+  color:#ffd2f0;
+  text-shadow:0 0 10px #ff72cf;
 }
 
-.fade{
-  animation:fade 1s ease;
+.final{
+  margin-top:12px;
+  font-size:19px;
+  color:#ffd2f0;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(15px)}
-  to{opacity:1;transform:translateY(0)}
+.particle{
+  position:absolute;
+  pointer-events:none;
+  animation:rise 5s linear forwards;
+  font-size:20px;
+}
+
+@keyframes rise{
+  from{
+    transform:translateY(110vh) rotate(0);
+    opacity:1;
+  }
+  to{
+    transform:translateY(-10vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:500px){
+
+  p{
+    font-size:17px;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  .photoGallery{
+    height:270px;
+    width:92vw;
+  }
+
+  .photo{
+    padding:6px 6px 28px;
+  }
+
+  .photo1{
+    width:145px;
+    height:190px;
+    left:0;
+    top:45px;
+  }
+
+  .photo2{
+    width:165px;
+    height:220px;
+  }
+
+  .photo3{
+    width:145px;
+    height:190px;
+    right:0;
+    top:45px;
+  }
+
+  .memoryText{
+    font-size:15px;
+  }
+
+  .final{
+    font-size:17px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="stars" id="stars"></div>
+<!-- SCENE 1 -->
 
-<div class="page fade" id="p1">
-  <div class="orb">🔐</div>
-  <p class="small">A SMALL SECRET ✨</p>
-  <h1>Hey Mahek...</h1>
-  <p>I made a little something for you.<br>No big words. Just open it. 🌙</p>
-  <button onclick="next('p1','p2')">Unlock the surprise ❤️</button>
-</div>
+<section class="scene active" id="scene1">
 
-<div class="page hidden fade" id="p2">
-  <p class="small">01 / 03</p>
-  <div style="font-size:50px">💌</div>
-  <h1>One little message</h1>
-  <p>Some people become a beautiful part of our memories.</p>
-  <p>Today, I just wanted to create one more small moment for you. ❤️</p>
-  <button onclick="next('p2','p3')">Continue ✨</button>
-</div>
+<div class="stars"></div>
 
-<div class="page hidden fade" id="p3">
-  <p class="small">02 / 03</p>
-  <div style="font-size:50px">🌙</div>
-  <h1>Pick one</h1>
+<div class="content">
 
-  <button class="choice" onclick="choose('A smile 😊')">😊 A smile</button>
-  <button class="choice" onclick="choose('A wish ✨')">✨ A wish</button>
-  <button class="choice" onclick="choose('A surprise 🎁')">🎁 A surprise</button>
+<div class="small">A LITTLE SURPRISE FOR YOU</div>
 
-  <p id="answer"></p>
-</div>
+<h1>Hey Vaishanavi ✨</h1>
 
-<div class="page hidden fade" id="p4">
-  <p class="small">03 / 03</p>
-  <div style="font-size:55px">✨</div>
-  <h1>One last tap...</h1>
-  <p>Ready for your birthday surprise?</p>
-  <button onclick="next('p4','final')">Open ❤️</button>
-</div>
+<p>
+Something special is waiting for you...<br>
+And this one comes from your <b>new brother</b>. ❤️
+</p>
 
-<div class="page hidden fade" id="final">
-
-  <div class="finalBox">
-
-    <div class="finalSticker">🎂✨</div>
-
-    <p class="small">A LITTLE WISH FOR YOU 🌸</p>
-
-    <h1>Happy Birthday</h1>
-
-    <div class="mahek">Mahek ♡</div>
-
-    <div class="wish">
-
-      <div class="wishTitle">💌 A wish from the heart ✨</div>
-
-      Happy Birthday, Mahek ❤️🎂
-      <br><br>
-
-      You are someone I can never call an ordinary part of my life.
-      So much has changed with time, but the respect and care I have
-      for you in my heart are still special. 🌷
-
-      <br><br>
-
-      I don’t expect anything from you; I just sincerely wish that
-      you always stay happy, achieve all your dreams, and never lose
-      your beautiful smile. ✨🦋
-
-      <br><br>
-
-      Maybe our story didn’t turn out the way I once imagined,
-      but you will always remain a beautiful memory in my life. ❤️
-
-      <br><br>
-
-      Today is your special day, so I just want to say —
-      <b>keep smiling, keep shining, and always be happy. 🌙✨</b>
-
-      <br><br>
-
-      Happy Birthday once again, Mahek. 🫂💗
-
-      <div class="sticker">
-        🌸 ✨ 🦋 ✨ 🌸
-      </div>
-
-    </div>
-
-  </div>
+<button onclick="nextScene()">
+💖 Open Surprise
+</button>
 
 </div>
+</section>
+
+
+<!-- SCENE 2 -->
+
+<section class="scene" id="scene2">
+
+<div class="content">
+
+<div class="icon">👋❤️</div>
+
+<div class="small">OFFICIALLY FAMILY</div>
+
+<h1>Welcome, Sister!</h1>
+
+<h2>Vaishanavi 🫂</h2>
+
+<p>
+We may have become siblings only recently,
+but I'm really happy that you are now a part
+of my family. ❤️
+<br><br>
+
+And yes... you officially have a new brother
+to annoy you forever. 😂
+</p>
+
+<button onclick="nextScene()">
+✨ Continue
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 3 -->
+
+<section class="scene" id="scene3">
+
+<div class="content">
+
+<div class="card">
+
+<div class="small">A MESSAGE FROM YOUR NEW BROTHER 💌</div>
+
+<h2>Dear Vaishanavi ❤️</h2>
+
+<p>
+We may not have years and years of memories
+together yet...
+<br><br>
+
+But I'm genuinely happy that life gave me
+a new sister like you. 🥹
+<br><br>
+
+I hope this new bond brings us
+lots of laughter, crazy memories,
+random arguments, and countless good moments. 😄
+<br><br>
+
+I don't know what the future holds,
+but I hope we always stay close,
+support each other, and keep this bond special. ❤️
+<br><br>
+
+And don't worry...
+I'll try to be a good brother. 😜
+<b>TRY.</b> 😂
+</p>
+
+</div>
+
+<button onclick="nextScene()">
+🎁 One More Thing
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 4 -->
+
+<section class="scene" id="scene4">
+
+<div class="content">
+
+<div class="gift">🎁</div>
+
+<h2>One Last Surprise...</h2>
+
+<p>
+Because a new sister deserves
+a special birthday memory. ❤️
+<br><br>
+
+Ready, Vaishanavi?
+</p>
+
+<button onclick="nextScene()">
+📸 Open The Surprise
+</button>
+
+</div>
+</section>
+
+
+<!-- SCENE 5 : PHOTO PAGE -->
+
+<section class="scene" id="scene5">
+
+<div class="content">
+
+<div class="small">✨ THREE SPECIAL MEMORIES ✨</div>
+
+<h2 class="memory-title">Our Memories ❤️</h2>
+
+<div class="memory-subtitle">
+Some moments are meant to stay forever.
+</div>
+
+<div class="photoGallery">
+
+<div class="photo photo1">
+<img src="photo1.jpg" alt="Memory 1">
+</div>
+
+<div class="photo photo2">
+<img src="photo2.jpg" alt="Memory 2">
+</div>
+
+<div class="photo photo3">
+<img src="photo3.jpg" alt="Memory 3">
+</div>
+
+</div>
+
+<div class="memoryText">
+Three photos. Three memories. One beautiful bond. 🫂✨
+</div>
+
+<div class="final">
+Happy Birthday, Vaishanavi! 🎂❤️<br>
+I'm really happy to call you my sister. 🫂✨
+</div>
+
+</div>
+
+</section>
+
 
 <script>
 
-for(let i=0;i<90;i++){
-  let s=document.createElement("div");
-  s.className="star";
-  s.style.left=Math.random()*100+"%";
-  s.style.top=Math.random()*100+"%";
-  s.style.animationDelay=Math.random()*2+"s";
-  document.getElementById("stars").appendChild(s);
+let current = 1;
+
+function nextScene(){
+
+  document
+  .getElementById("scene"+current)
+  .classList.remove("active");
+
+  current++;
+
+  document
+  .getElementById("scene"+current)
+  .classList.add("active");
+
+  createParticles();
+
 }
 
-function next(a,b){
-  document.getElementById(a).classList.add("hidden");
-  document.getElementById(b).classList.remove("hidden");
-}
+function createParticles(){
 
-function choose(text){
-  document.getElementById("answer").innerHTML=text+" ❤️";
-  setTimeout(function(){
-    next("p3","p4");
-  },1200);
+  const symbols=[
+    "❤️","💖","✨","🌸","⭐","🫂","🎉"
+  ];
+
+  for(let i=0;i<20;i++){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.textContent=
+      symbols[Math.floor(Math.random()*symbols.length)];
+
+    p.style.left=
+      Math.random()*100+"vw";
+
+    p.style.animationDelay=
+      Math.random()*1.5+"s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+      p.remove();
+    },5500);
+  }
 }
 
 </script>
